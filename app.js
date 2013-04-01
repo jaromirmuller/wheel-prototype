@@ -3,8 +3,10 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes');
+var express = require('express');
+var routes = require('./routes');
+var homepage = require('./routes/homepage.js');
+var product = require('./routes/product.js');
 
 var app = module.exports = express.createServer();
 
@@ -13,6 +15,12 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.set('view options', { layout: false });
+
+  app.locals({
+        copyright : {year: 2013}
+  });
+
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.compiler({ src : __dirname + '/public', enable: ['less']}));
@@ -41,24 +49,16 @@ express.compiler.compilers.less.compile = function(str, fn){
 
 // Routes
 
-app.get('/', routes.index);
+app.get('/', homepage.view);
+app.get('/product/list', product.list);
 app.get('/product/view', routes.index);
+app.get('/basket/view', routes.index);
 app.get('/basket/product/add', routes.index);
 app.get('/basket/product/remove', routes.index);
 app.get('/basket/product/update', routes.index);
 app.get('/checkout/view', routes.index);
 app.get('/checkout/save', routes.index);
 app.get('/checkout/place', routes.index);
-
-
-
-
-
-
-
-
-
-
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
