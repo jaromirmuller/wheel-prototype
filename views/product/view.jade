@@ -1,0 +1,24 @@
+extends ../page
+
+block content
+
+  .container
+    .row
+      .span4         
+        .thumbnail
+          img(src='#{product.image.url}')
+      .span5
+        .caption
+          h3 #{product.name}
+        .row-fluid
+          p #{product.description}
+        .row
+          .span2
+            a.btn.btn-primary(href='#{product.add_to_basket_url}') Add to basket
+          .span1 
+            span.price &euro; #{product.price}
+    .row
+      .span9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis enim nulla, eget porttitor elit. Mauris hendrerit diam et orci pellentesque sit amet euismod enim facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam convallis eros dui, id tincidunt justo. Donec placerat volutpat imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tempus, ipsum in varius feugiat, dolor est blandit lectus, eget vehicula augue erat in nisl. Suspendisse potenti. In tempor, lectus et venenatis imperdiet, elit sem pellentesque velit, ut pellentesque odio quam vel risus. In hac habitasse platea dictumst. Vivamus nisl lectus, placerat a hendrerit sit amet, congue sed lacus. 
+ 
+
+ 

@@ -1,0 +1,22 @@
+extends ../page
+
+block content
+
+  .container
+    .row
+
+      ul.thumbnails
+        each product, i in productCollection
+          li.span4         
+            .thumbnail 
+              img(src='#{product.image.url}')
+              .caption
+                h3 #{product.name}
+                .row-fluid
+                  p #{product.description}
+                .row
+                  .span2
+                    a.btn.btn-primary(href='#{product.url}') View detail
+                  .span1 
+                    span.price &euro; #{product.price}
+             
