@@ -3,3 +3,16 @@
   font-weight: bold;
 }
 
+.order-summary-head {
+  font-weight: bold;
+}
+
+.grand-total {
+  font-weight: bold;
+}
+
+
+.order-summary-totals .head{
+  text-align: right;
+}
+

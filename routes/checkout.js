@@ -18,7 +18,7 @@ exports.place = function(req, res){
 };
 
 exports.success = function(req, res){
-  res.render('checkout/view', { 
+  res.render('checkout/success', { 
     title: 'Wheel Prototype' 
   });
 };

@@ -250,12 +250,74 @@ block content
 
 
         legend Order Summary
-        legend Terms &amp; Conditions
+
+        .row.order-summary-head
+          .span2
+            span.product-name Product name
+          .span2.product-detail
+            span.product-detail Product detail
+          .span1
+            span.product-unit-price Price
+          .span1
+            span.product.qty Qty
+          .span2
+            span.row-total Total
+
+        .row.order-summary-line
+          .span2
+            span.product-name Some super cool product
+          .span2.product-detail
+            span.product-detail Size = L
+          .span1
+            span.product-unit-price &euro; 99.99
+          .span1
+            span.product.qty 1
+          .span2
+            span.row-total &euro; 99.99
+
+        .row.order-summary-line
+          .span2
+            span.product-name Another product
+          .span2.product-detail
+            span.product-detail Colour = Red
+          .span1
+            span.product-unit-price &euro; 99.99
+          .span1
+            span.product.qty 2
+          .span2
+            span.row-total &euro; 199.98
+
+        .row.order-summary-totals
+          .span4.offset4
+            .row
+              .span2.head  Sub Total
+              .span2 &euro; 9999.99
+            .row
+              .span2.head Delivery
+              .span2 &euro; 9999.99
+            .row
+              .span2.head VAT
+              .span2 &euro; 9999.99
+            .row
+              .span2.head Discount
+              .span2 - &euro; 9999.99
+            .row.grand-total 
+              .span2.head Grand Total
+              .span2 &euro; 99999.99
+
+
+
+
+
+
 
 
     .row
       .span9
-        button.btn.btn-primary Place order
+        button.btn.btn-danger.btn-large Place order
+        .row 
+          .span6 
+            em By clicking on Place order button I agree with Terms and Condtions
 
 
  
