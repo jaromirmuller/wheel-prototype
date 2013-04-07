@@ -8,6 +8,8 @@ var routes = require('./routes');
 var homepage = require('./routes/homepage.js');
 var product = require('./routes/product.js');
 var basket = require('./routes/basket.js');
+var checkout = require('./routes/checkout.js');
+
 
 var app = module.exports = express.createServer();
 
@@ -54,12 +56,14 @@ app.get('/', homepage.view);
 app.get('/product/list', product.list);
 app.get('/product/view', product.view);
 app.get('/basket/view', basket.view);
-app.get('/basket/product/add', routes.index);
-app.get('/basket/product/remove', routes.index);
-app.get('/basket/product/update', routes.index);
-app.get('/checkout/view', routes.index);
-app.get('/checkout/save', routes.index);
-app.get('/checkout/place', routes.index);
+app.get('/basket/product/add', basket.product.add);
+app.get('/basket/product/remove', basket.product.remove);
+app.get('/basket/product/update', basket.product.update);
+app.get('/checkout', checkout.view);
+app.get('/checkout/save', checkout.save);
+app.get('/checkout/place', checkout.place);
+app.get('/checkout/success', checkout.success);
+
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

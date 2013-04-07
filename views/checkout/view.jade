@@ -1,0 +1,261 @@
+extends ../page
+
+block content
+
+  .container
+
+
+
+    .row
+      form.span9.form-horizontal
+        legend Contact Details
+
+        .control-group
+          label.control-label(for='contact-email') Email
+          .controls
+            input(type='text', 
+              id='contact-email', 
+              name='checkout[contact][email]', 
+              placeholder='Enter your email addres')
+
+
+        legend Delivery Address
+
+        .control-group
+          label.control-label(for='delivery-name') Name
+          .controls
+            input(type='text', 
+              id='delivery-name', 
+              name='checkout[delivery][name]', 
+              placeholder='Enter your name')
+
+        .control-group
+          label.control-label(for='delivery-lastname') Lastname
+          .controls
+            input(type='text', 
+              id='delivery-lastname', 
+              name='checkout[delivery][lastname]', 
+              placeholder='Enter your lastname')
+
+        .control-group
+          label.control-label(for='delivery-street-1') Street
+          .controls
+            input(type='text', 
+              id='delivery-street-1', 
+              name='checkout[delivery][street1]', 
+              placeholder='Enter your street')
+        .control-group
+          label.control-label
+          .controls
+            input(type='text', 
+              id='delivery-street-2',
+              name='checkout[delivery][street2]')
+                
+        .control-group
+          label.control-label(for='delivery-postcode') Postcode
+          .controls
+            input.input-mini(type='text', 
+              id='delivery-postcode', 
+              name='checkout[delivery][postcode]',
+              placeholder='Postcode')
+                
+        .control-group
+          label.control-label(for='delivery-city') Town/City
+          .controls
+            input(type='text', 
+              id='delivery-city', 
+              name='checkout[delivery][city]',
+              placeholder='Enter your name')
+
+        .control-group
+          label.control-label(for='delivery-county') County
+          .controls
+            input(type='text', 
+              id='delivery-county', 
+              name='checkout[delivery][county]',
+              placeholder='Enter your name')
+
+        .control-group
+          label.control-label(for='delivery-country') Country
+          .controls
+            select( 
+              id='delivery-country', 
+              name='checkout[delivery][country]',
+              placeholder='Choose your contry')
+              option(value='') -- Choose your country --
+              option(value='GB') United Kingdom
+              option(value='CZ') Czech Republic
+              option(value='BG') Bulgaria
+              option(value='NL') Netherland
+
+        legend Billing Address
+        
+        .control-group
+          label.control-label(for='billing-name') Person or Company?
+          .controls
+            select( 
+              id='billing-type', 
+              name='checkout[billing][type]',
+              placeholder='Are we billing to personal or company?')
+              option(value='') -- Choose your option --
+              option(value='personal') Person
+              option(value='company') Company
+
+         
+        .control-group
+          label.control-label(for='billing-name') Name
+          .controls
+            input(type='text', id='billing-name', name='checkout[billing][name]', placeholder='Enter your name')
+         
+        .control-group
+          label.control-label(for='billing-lastname') Lastname
+          .controls
+            input(type='text', 
+              id='billing-lastname', 
+              name='checkout[billing][lastname]', 
+              placeholder='Enter your lastname')
+         
+        .control-group
+          label.control-label(for='billing-company') Company
+          .controls
+            input(type='text', 
+              id='billing-company', 
+              name='checkout[billing][company]', 
+              placeholder='Enter your company name')
+          
+        .control-group
+          label.control-label(for='billing-business-id') Business ID
+          .controls
+            input(type='text', 
+              id='billing-business-id', 
+              name='checkout[billing][business_id]', 
+              placeholder='Enter your business ID')
+           
+        .control-group
+          label.control-label(for='billing-vat-id') VAT ID
+          .controls
+            input(type='text', 
+              id='billing-vat-id', 
+              name='checkout[billing][vat_id]', 
+              placeholder='Enter your company&rsquo;s VAT ID')
+         
+        .control-group
+          label.control-label(for='billing-street-1') Street
+          .controls
+            input(type='text', 
+              id='billing-street-1', 
+              name='checkout[billing][street1]', 
+              placeholder='Enter your street')
+     
+        .control-group
+          label.control-label(for='billing-street-1')
+          .controls
+            input(type='text', 
+              id='billing-street-2',
+              name='checkout[billing][street2]')
+         
+        .control-group
+          label.control-label(for='billing-postcode') Postcode
+          .controls
+            input.input-mini(type='text', 
+              id='billing-postcode', 
+              name='checkout[billing][postcode]',
+              placeholder='Postcode')
+         
+        .control-group
+          label.control-label(for='billing-city') Town/City
+          .controls
+            input(type='text', 
+              id='billing-city', 
+              name='checkout[billing][city]',
+              placeholder='Enter your name')
+         
+        .control-group
+          label.control-label(for='billing-county') County
+          .controls
+            input(type='text', 
+              id='billing-county', 
+              name='checkout[billing][county]',
+              placeholder='Enter your name')
+         
+        .control-group
+          label.control-label(for='billing-country') Country
+          .controls
+            select( 
+              id='billing-country', 
+              name='checkout[billing][country]',
+              placeholder='Choose your contry')
+              option(value='') -- Choose your country --
+              option(value='GB') United Kingdom
+              option(value='CZ') Czech Republic
+              option(value='BG') Bulgaria
+              option(value='NL') Netherland
+
+
+        legend Delivery Method
+
+        .control-group
+          label.radio Standard delivery (&euro; 3.99)
+            input(type='radio', name='checkout[delivery_method]', value='standard_delivery')
+          label.radio Next day delivery (&euro; 6.99)
+            input(type='radio', name='checkout[delivery_method]', value='next_day_delivery')
+
+        legend Payment Method
+
+        .control-group
+          label.radio Credit Card 
+            input(type='radio', name='checkout[payment_method]', value='credit_card')
+          .row
+            .span4
+              .control-group
+                label.control-label(for='payment-method-cc-type') Credit Card type
+                .controls
+                  select(
+                    id='payment-method-cc-type',
+                    name='checkout[payment_method][cc_type]')
+                      option(value='') -- Choose your credit card --
+                      option(value='VISA') VISA
+                      option(value='MASTERCARD') MasterCard
+              .control-group
+                label.control-label(for='payment-method-cc-number') Credit Card Number
+                .controls
+                  input(type='text', 
+                    id='payment-method-cc-number',
+                    name='checkout[payment_method][cc_number]',
+                    placeholder='Enter your credit card number')
+              .control-group
+                label.control-label(for='payment-method-cc-month') Credit Card Expiry
+                .controls
+                  input.input-mini(type='text', 
+                    id='payment-method-cc-expiry-month',
+                    name='checkout[payment_method][cc_expory_month]',
+                    placeholder='MM')
+                  span &nbsp;/&nbsp;
+                  input.input-mini(type='text', 
+                    id='payment-method-cc-expiry-year',
+                    name='checkout[payment_method][cc_expory_year]',
+                    placeholder='YY')
+              .control-group
+                label.control-label(for='payment-method-cv2') CV2
+                .controls
+                  input.input-mini(type='text', 
+                    id='payment-method-cc-cv2',
+                    name='checkout[payment_method][cv2]',
+                    placeholder='...')
+
+
+        label.radio Paypal
+          input(type='radio', name='checkout[payment_method]', value='paypal')
+          p You'll be redirected to Paypal site to confirm and finish the payment
+
+
+        legend Order Summary
+        legend Terms &amp; Conditions
+
+
+    .row
+      .span9
+        button.btn.btn-primary Place order
+
+
+ 
