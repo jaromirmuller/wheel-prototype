@@ -2,7 +2,6 @@
 
 exports.view = function(req, res){
   res.render('basket/view', { 
-    title: 'Wheel Prototype',
     productCollection : [
       {
         sku: '1',
@@ -29,19 +28,16 @@ exports.product = {};
 
 exports.product.add = function(req, res){
   res.render('basket', { 
-    title: 'Wheel Prototype' 
   });
 };
 
 exports.product.remove = function(req, res){
   res.render('basket', { 
-    title: 'Wheel Prototype' 
   });
 };
 
 exports.product.update = function(req, res){
   res.render('basket', { 
-    title: 'Wheel Prototype' 
   });
 };
 

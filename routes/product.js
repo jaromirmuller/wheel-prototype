@@ -1,7 +1,6 @@
 exports.view = function(req, res){
 
   res.render('product/view', { 
-    title: 'Featured product | Wheel Prototype',
     product : {
       sku: '1',
       name: 'Product Name',
@@ -21,7 +20,6 @@ exports.list = function(req, res){
   var desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in rutrum turpis. Phasellus vel libero.';
 
   res.render('product/list', { 
-    title: 'Product Listing | Wheel Prototype',
     productCollection : [
         {
           sku: '1',

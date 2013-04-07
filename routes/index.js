@@ -5,7 +5,6 @@
 
 exports.index = function(req, res){
   res.render('page', { 
-    layout: 'page',
-    title: 'Wheel Prototype' 
+    layout: 'page'
   });
 };

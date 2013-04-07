@@ -21,7 +21,8 @@ app.configure(function(){
   app.set('view options', { layout: false });
 
   app.locals({
-        copyright : {year: 2013}
+    copyright : {year: 2013},
+    title : 'Wheel Prototype'
   });
 
   app.use(express.bodyParser());
