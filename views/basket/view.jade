@@ -1,0 +1,39 @@
+extends ../page
+
+block content
+
+  .container
+
+    .row
+      .span6
+        button.btn.btn-primary Checkout
+
+
+    .row
+      ul.thumbnails
+        each product, i in productCollection
+          li.well
+            .span1         
+              .thumbnail
+                img(src='#{product.image.url}')
+            .span2
+              .caption
+                h3 #{product.name}
+              .neco popisek                
+            .span1 
+              &euro; #{product.price}
+            .span1
+              input.span1(type='text', name='qty-#{product.sku}', value='#{product.qty}')
+            .span1
+              &euro; #{product.row_total}
+            .span1
+              button.btn.btn-danger
+                i.icon-remove
+    .row
+      .span6      
+        button.btn.btn-warning Clear basket
+        button.btn.btn-warning Update basket
+        button.btn.btn-primary Checkout
+
+
+ 

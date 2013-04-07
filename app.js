@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var homepage = require('./routes/homepage.js');
 var product = require('./routes/product.js');
+var basket = require('./routes/basket.js');
 
 var app = module.exports = express.createServer();
 
@@ -52,7 +53,7 @@ express.compiler.compilers.less.compile = function(str, fn){
 app.get('/', homepage.view);
 app.get('/product/list', product.list);
 app.get('/product/view', product.view);
-app.get('/basket/view', routes.index);
+app.get('/basket/view', basket.view);
 app.get('/basket/product/add', routes.index);
 app.get('/basket/product/remove', routes.index);
 app.get('/basket/product/update', routes.index);
